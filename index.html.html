@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Basic App</title>
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f5f5f5;
+  }
+  .card {
+    text-align: center;
+    background: white;
+    padding: 40px 60px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  h1 {
+    font-size: 64px;
+    margin: 0 0 20px;
+    color: #333;
+  }
+  button {
+    font-size: 18px;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    margin: 0 6px;
+  }
+  button:hover { background: #555; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="count">0</h1>
+    <button onclick="change(-1)">−</button>
+    <button onclick="change(1)">+</button>
+  </div>
+
+  <script>
+    let count = 0;
+    const el = document.getElementById('count');
+    function change(delta) {
+      count += delta;
+      el.textContent = count;
+    }
+  </script>
+</body>
+</html>
